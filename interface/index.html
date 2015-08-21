@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cashflow Interface</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-select.min.css">
+  <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap-select.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Cashflow Forms</h2>
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#outcome">Outcome</a></li>
+    <li><a data-toggle="tab" href="#income">Income</a></li>
+    <li><a data-toggle="tab" href="#saving">Saving</a></li>
+    <li><a data-toggle="tab" href="#utang">Utang</a></li>
+    <li><a data-toggle="tab" href="#piutang">Piutang</a></li>
+    <li><a data-toggle="tab" href="#category">Category</a></li>
+    <li><a data-toggle="tab" href="#limit">Limit Alokasi</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="outcome" class="tab-pane fade in active">
+      <h3>Outcome</h3>
+	      <form class="form-horizontal" role="form" action='out' method='get'>
+			    <div class="form-group">
+			      <label class="control-label col-sm-2" for="amount">Amount:</label>
+			      <div class="col-sm-10">
+			        <div class="input-group">
+					  <span class="input-group-addon">Rp</span>
+					  <input type="text" name='amount' id='amount' class="form-control" aria-label="Amount Rupiah">
+					</div>
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <label class="control-label col-sm-2" for="pwd">Category:</label>
+			      <div class="col-sm-10">          
+					  <select class="form-control selectpicker select" name='category' id="outcategory">
+					    <option value=''>pilih</option>
+					  </select>
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <label class="control-label col-sm-2" for="pwd">Keterangan:</label>
+			      <div class="col-sm-10">          
+			        <textarea class="form-control" rows="5" id="ket" name="ket"></textarea>
+			      </div>
+			    </div>
+			    <div class="form-group">
+			    	<label class="control-label col-sm-2" for="pwd">Postdate:</label>
+			        <div class="col-sm-10">   
+		                <div class='input-group date' id='datetimepicker1'>
+		                    <input type='text' name='postdate' id='postdate' class="form-control" />
+		                    <span class="input-group-addon">
+	                        <span class="glyphicon glyphicon-calendar"></span>
+	                    </span>
+		                </div>
+		            </div>  
+		            <script type="text/javascript">
+			            $(function () {
+			                $('#datetimepicker1').datetimepicker(
+			                	{
+			                		format: "YYYY-MM-DD HH:mm:ss"
+			                	}	
+			                 );
+			            });
+			        </script>  
+	            </div>
+			    <div class="form-group">        
+			      <div class="col-sm-offset-2 col-sm-10">
+			        <button type="submit" class="btn btn-success submit">Submit</button>
+			      </div>
+			    </div>
+		  </form>
+    </div>
+    <div id="income" class="tab-pane fade">
+      <h3>Income</h3>
+	      <form class="form-horizontal" role="form" action='in' method='get'>
+			    <div class="form-group">
+			      <label class="control-label col-sm-2" for="amount">Amount:</label>
+			      <div class="col-sm-10">
+			        <div class="input-group">
+					  <span class="input-group-addon">Rp</span>
+					  <input type="text" name='amount' id='amount' class="form-control" aria-label="Amount Rupiah">
+					</div>
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <label class="control-label col-sm-2" for="pwd">Category:</label>
+			      <div class="col-sm-10">          
+					  <select class="form-control selectpicker select" name='category' id="incategory">
+					    <option value=''>pilih</option>
+					  </select>
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <label class="control-label col-sm-2" for="pwd">Keterangan:</label>
+			      <div class="col-sm-10">          
+			        <textarea class="form-control" rows="5" id="ket" name="ket"></textarea>
+			      </div>
+			    </div>
+			    <div class="form-group">
+			    	<label class="control-label col-sm-2" for="pwd">Postdate:</label>
+			        <div class="col-sm-10">   
+		                <div class='input-group date' id='datetimepicker1'>
+		                    <input type='text' name='postdate' id='postdate' class="form-control" />
+		                    <span class="input-group-addon">
+	                        <span class="glyphicon glyphicon-calendar"></span>
+	                    </span>
+		                </div>
+		            </div>  
+		            <script type="text/javascript">
+			            $(function () {
+			                $('#datetimepicker1').datetimepicker(
+			                	{
+			                		format: "YYYY-MM-DD HH:mm:ss"
+			                	}	
+			                 );
+			            });
+			        </script>  
+	            </div>
+			    <div class="form-group">        
+			      <div class="col-sm-offset-2 col-sm-10">
+			        <button type="submit" class="btn btn-success submit">Submit</button>
+			      </div>
+			    </div>
+		  </form>
+    </div>
+    <div id="saving" class="tab-pane fade">
+      <h3>Saving</h3>
+	      <form class="form-horizontal" role="form" action='saving' method='get'>
+			    <div class="form-group">
+			      <label class="control-label col-sm-2" for="amount">Amount:</label>
+			      <div class="col-sm-10">
+			        <div class="input-group">
+					  <span class="input-group-addon">Rp</span>
+					  <input type="text" name='amount' id='amount' class="form-control" aria-label="Amount Rupiah">
+					</div>
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <label class="control-label col-sm-2" for="pwd">Category:</label>
+			      <div class="col-sm-10">          
+					  <select class="form-control selectpicker select" name='category' id="svcategory">
+					    <option value=''>pilih</option>
+					  </select>
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <label class="control-label col-sm-2" for="pwd">Keterangan:</label>
+			      <div class="col-sm-10">          
+			        <textarea class="form-control" rows="5" id="ket" name="ket"></textarea>
+			      </div>
+			    </div>
+	            <div class="form-group">
+			      <label class="control-label col-sm-2" for="pwd">Lokasi Simpanan:</label>
+			      <div class="col-sm-10">          
+					  <select class="form-control selectpicker select" name='idlsp' id="lsp">
+					    <option value=''>pilih</option>
+					  </select>
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <label class="control-label col-sm-2" for="pwd">Target:</label>
+			      <div class="col-sm-10">          
+			        <textarea class="form-control" rows="5" id="target" name="target"></textarea>
+			      </div>
+			    </div>
+			    <div class="form-group">
+			    	<label class="control-label col-sm-2" for="pwd">Postdate:</label>
+			        <div class="col-sm-10">   
+		                <div class='input-group date' id='datetimepicker1'>
+		                    <input type='text' name='postdate' id='postdate' class="form-control" />
+		                    <span class="input-group-addon">
+	                        <span class="glyphicon glyphicon-calendar"></span>
+	                    </span>
+		                </div>
+		            </div>  
+		            <script type="text/javascript">
+			            $(function () {
+			                $('#datetimepicker1').datetimepicker(
+			                	{
+			                		format: "YYYY-MM-DD HH:mm:ss"
+			                	}	
+			                 );
+			            });
+			        </script>  
+	            </div>
+			    <div class="form-group">        
+			      <div class="col-sm-offset-2 col-sm-10">
+			        <button type="submit" class="btn btn-success submit">Submit</button>
+			      </div>
+			    </div>
+		  </form>
+    </div>
+    <div id="utang" class="tab-pane fade">
+      <h3>Utang</h3>
+	      <form class="form-horizontal" role="form" action='utang' method='get'>
+			    <div class="form-group">
+			      <label class="control-label col-sm-2" for="amount">Amount:</label>
+			      <div class="col-sm-10">
+			        <div class="input-group">
+					  <span class="input-group-addon">Rp</span>
+					  <input type="text" name='amount' id='amount' class="form-control" aria-label="Amount Rupiah">
+					</div>
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <label class="control-label col-sm-2" for="pwd">Category:</label>
+			      <div class="col-sm-10">          
+					  <select class="form-control selectpicker select" name='category' id="ucategory">
+					    <option value=''>pilih</option>
+					  </select>
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <label class="control-label col-sm-2" for="pwd">Keterangan:</label>
+			      <div class="col-sm-10">          
+			        <textarea class="form-control" rows="5" id="ket" name="ket"></textarea>
+			      </div>
+			    </div>
+			    <div class="form-group">
+			    	<label class="control-label col-sm-2" for="pwd">Postdate:</label>
+			        <div class="col-sm-10">   
+		                <div class='input-group date' id='datetimepicker1'>
+		                    <input type='text' name='postdate' id='postdate' class="form-control" />
+		                    <span class="input-group-addon">
+	                        <span class="glyphicon glyphicon-calendar"></span>
+	                    </span>
+		                </div>
+		            </div>  
+		            <script type="text/javascript">
+			            $(function () {
+			                $('#datetimepicker1').datetimepicker(
+			                	{
+			                		format: "YYYY-MM-DD HH:mm:ss"
+			                	}	
+			                 );
+			            });
+			        </script>  
+	            </div>
+			    <div class="form-group">        
+			      <div class="col-sm-offset-2 col-sm-10">
+			        <button type="submit" class="btn btn-success submit">Submit</button>
+			      </div>
+			    </div>
+		  </form>
+    </div>
+    <div id="piutang" class="tab-pane fade">
+      <h3>Piutang</h3>
+	      <form class="form-horizontal" role="form" action='piutang' method='get'>
+			    <div class="form-group">
+			      <label class="control-label col-sm-2" for="amount">Amount:</label>
+			      <div class="col-sm-10">
+			        <div class="input-group">
+					  <span class="input-group-addon">Rp</span>
+					  <input type="text" name='amount' id='amount' class="form-control" aria-label="Amount Rupiah">
+					</div>
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <label class="control-label col-sm-2" for="pwd">Category:</label>
+			      <div class="col-sm-10">          
+					  <select class="form-control selectpicker select" name='category' id="pcategory">
+					    <option value=''>pilih</option>
+					  </select>
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <label class="control-label col-sm-2" for="pwd">Keterangan:</label>
+			      <div class="col-sm-10">          
+			        <textarea class="form-control" rows="5" id="ket" name="ket"></textarea>
+			      </div>
+			    </div>
+			    <div class="form-group">
+			    	<label class="control-label col-sm-2" for="pwd">Postdate:</label>
+			        <div class="col-sm-10">   
+		                <div class='input-group date' id='datetimepicker1'>
+		                    <input type='text' name='postdate' id='postdate' class="form-control" />
+		                    <span class="input-group-addon">
+	                        <span class="glyphicon glyphicon-calendar"></span>
+	                    </span>
+		                </div>
+		            </div>  
+		            <script type="text/javascript">
+			            $(function () {
+			                $('#datetimepicker1').datetimepicker(
+			                	{
+			                		format: "YYYY-MM-DD HH:mm:ss"
+			                	}	
+			                 );
+			            });
+			        </script>  
+	            </div>
+			    <div class="form-group">        
+			      <div class="col-sm-offset-2 col-sm-10">
+			        <button type="submit" class="btn btn-success submit">Submit</button>
+			      </div>
+			    </div>
+		  </form>
+    </div>
+    <div id="category" class="tab-pane fade">
+      <h3>Category</h3>
+	      <form class="form-horizontal" role="form" action='addcat' method='get'>
+			   <div class="form-group">
+			      <label class="control-label col-sm-2" for="type">Type:</label>
+			      <div class="col-sm-10">          
+					  <select class="form-control selectpicker select" name='type' id="type">
+					    <option value=''>pilih</option>
+					    <option value='+'>income</option>
+					    <option value='-'>outcome</option>
+					    <option value='sv'>saving</option>
+					    <option value='u'>utang</option>
+					    <option value='p'>piutang</option>
+					  </select>
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <label class="control-label col-sm-2" for="pwd">Category:</label>
+			      <div class="col-sm-10">        
+					  <input type="text" name='category' id='category' class="form-control" aria-label="Category">
+			      </div>
+			    </div>
+			    <div class="form-group">        
+			      <div class="col-sm-offset-2 col-sm-10">
+			        <button type="submit" class="btn btn-success submit">Submit</button>
+			      </div>
+			    </div>
+		  </form>
+    </div>
+    <div id="limit" class="tab-pane fade">
+      <h3>Limit Alokasi</h3>
+	      <form class="form-horizontal" role="form" action='limit' method='get'>
+			    <div class="form-group">
+			      <label class="control-label col-sm-2" for="pwd">Category:</label>
+			      <div class="col-sm-10">          
+					  <select class="form-control selectpicker select" name='category' id="lcategory">
+					    <option value=''>pilih</option>
+					  </select>
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <label class="control-label col-sm-2" for="amount">Amount:</label>
+			      <div class="col-sm-10">
+			        <div class="input-group">
+					  <span class="input-group-addon">Rp</span>
+					  <input type="text" name='amount' id='amount' class="form-control" aria-label="Amount Rupiah">
+					</div>
+			      </div>
+			    </div>
+			    <div class="form-group">        
+			      <div class="col-sm-offset-2 col-sm-10">
+			        <button type="submit" class="btn btn-success submit">Submit</button>
+			      </div>
+			    </div>
+		  </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Title</h4>
+      </div>
+      <div class="modal-body">
+        <p>content</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="js/moment-with-locales.js"></script>
+<script src="js/bootstrap-datetimepicker.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
